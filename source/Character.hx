@@ -299,6 +299,12 @@ class Character extends FlxSprite
 					addOffset("singLEFT", -30);
 					addOffset("singDOWN", -30, -40);
 					charY+=130;
+                                case "dave":
+					addOffset('idle');
+					addOffset("singUP", 0, 0);
+					addOffset("singRIGHT", 0, 0);
+					addOffset("singLEFT", 0, 0);
+					addOffset("singDOWN", 0, 0);
 			}
 		}else{
 			var e:Dynamic = Reflect.field(TitleState.defCharJson.characters,curCharacter);
@@ -994,6 +1000,19 @@ class Character extends FlxSprite
 
 					addOffsets('parents-christmas');
 					hasAlts=true;
+
+					playAnim('idle');
+                                        case 'dave':
+					// DAD ANIMATION LOADING CODE
+					tex = Paths.getSparrowAtlas('characters/dave_sheet');
+					frames = tex;
+					addAnimation('idle', 'idleDance', 24);
+					addAnimation('singUP', 'Up', 24);
+					addAnimation('singRIGHT', 'Right', 24);
+					addAnimation('singDOWN', 'Down', 24);
+					addAnimation('singLEFT', 'Left', 24);
+
+					addOffsets("dad");
 
 					playAnim('idle');
 				default: // Custom characters pog
